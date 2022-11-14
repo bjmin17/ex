@@ -4,25 +4,18 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './App.css';
 import NavigationBar from './views/utils/navbar';
-import HomeDiv from './views/home/index';
-import Hello from "./component/Hello";
-import Welcome from "./component/Welcome";
-import styles from "./App.module.css";
+import Header from "./component/Header";
+import DayList from "./component/DayList";
+import Day from "./component/Day";
+
 
 function App() {
-
-    let post = '내 연습장';
-    let [title, updTitle] = useState(['남자 코트 추천','여자 코트 추천','코트 추천']);
-    let [like, updLike] = useState(0);
-
-
     return (
         <div className="App">
             <NavigationBar/>
-            <Hello age={10}/>
-            <Hello age={20}/>
-            <Hello age={30}/>
-            <div className={styles.box}>App</div>
+            <Header />
+            <DayList />
+            <Day />
         </div>
     );
 }
