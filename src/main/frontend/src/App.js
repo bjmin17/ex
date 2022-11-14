@@ -1,18 +1,36 @@
 // src/main/frontend/src/App.js
-
+'use strict';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './App.css';
+import NavigationBar from './views/utils/navbar';
+import HomeDiv from './views/home/index';
+import Hello from "./component/Hello";
+import Welcome from "./component/Welcome";
+import styles from "./App.module.css";
 
 function App() {
 
-    let post = '강남 우동 맛집';
+    let post = '내 연습장';
     let [title, updTitle] = useState(['남자 코트 추천','여자 코트 추천','코트 추천']);
     let [like, updLike] = useState(0);
 
+
     return (
         <div className="App">
-            <div className="black-nav">
+            <NavigationBar/>
+            <Hello/>
+            <div className={styles.box}>App</div>
+        </div>
+    );
+}
+
+/*function Main() {
+    return (
+        <>
+            <NavigationBar/>
+            <HomeDiv/>
+            <div className="black-nav" onClick={goHome}>
                 <h4>{post}</h4>
             </div>
 
@@ -40,23 +58,11 @@ function App() {
                 <h4>{title[2]} <span>👍</span> 0 </h4>
                 <p>10월 19일 발행</p>
             </div>
-
-            <Modal/>
-        </div>
-    );
-}
-
-function Modal() {
-    return (
-        <>
-            <div className="modal">
-                <h4>제목</h4>
-                <p>날짜</p>
-                <p>상세내용</p>
-            </div>
-            <div></div>
         </>
     )
-}
+}*/
 
+const goHome = () => {
+    document.location.href="http://localhost:3000/";
+}
 export default App;

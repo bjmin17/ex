@@ -13,6 +13,11 @@ public class MainPageController {
         return "/main/index";
     }
 
+    @RequestMapping({"/reactEx"})
+    public String reactEx(HttpServletRequest request) {
+        return "/main/index";
+    }
+
     @RequestMapping("/dashboard")
     public String dashboard(HttpServletRequest request) {
         return "/dashboard/dashboard";
