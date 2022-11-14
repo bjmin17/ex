@@ -19,9 +19,9 @@ function App() {
     return (
         <div className="App">
             <NavigationBar/>
-            <Hello/>
-            <Hello/>
-            <Hello/>
+            <Hello age={10}/>
+            <Hello age={20}/>
+            <Hello age={30}/>
             <div className={styles.box}>App</div>
         </div>
     );

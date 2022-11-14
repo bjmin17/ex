@@ -1,22 +1,20 @@
 import World from "./World";
 import styles from "./Hello.module.css";
 import {useState} from "react";
+import UserName from "./UserName";
 
-const Hello = () => {
-    // let name = "Mike";
+const Hello = ({ age }) => {
     const [name, setName] = useState('Mike');
-
-    // 동일한 컴포넌트라도 state는 다르게 사용하기 때문에 서로 영향을 미치지 않음
-    function changeName() {
-        const newName = name === "Mike" ? "Jane" : "Mike";
-        setName(newName);
-    }
+    const msg = age > 19 ? '성인입니다.' : '미성년자입니다.';
 
     return (
         <div>
             <p>Hello</p>
-            <p>{name}</p>
-            <button onClick={changeName}>Change</button>
+            <p>{name}({age}세) : {msg}</p>
+            <UserName name={name}/>
+            <button onClick={() => {
+                setName(name === "Mike" ? "Jane" : "Mike");
+            }}>Change</button>
         </div>
     )
 }
