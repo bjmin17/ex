@@ -20,6 +20,8 @@ function App() {
         <div className="App">
             <NavigationBar/>
             <Hello/>
+            <Hello/>
+            <Hello/>
             <div className={styles.box}>App</div>
         </div>
     );
